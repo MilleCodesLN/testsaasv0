@@ -5,19 +5,9 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import {
-  BookOpen,
-  Calendar,
-  Home,
-  LogOut,
-  Plus,
-  Search,
-  Settings,
-  Scissors,
-  User,
-  RibbonIcon as Yarn,
-} from "lucide-react"
+import { BookOpen, Calendar, Home, Plus, Search, Settings, Scissors, User, RibbonIcon as Yarn } from "lucide-react"
 import { ProjectCard } from "@/components/project-card"
+import { LogoutButton } from "@/components/logout-button"
 
 export default function DashboardPage() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -121,13 +111,7 @@ export default function DashboardPage() {
                   <Settings className="h-4 w-4" />
                   Paramètres
                 </Link>
-                <Link
-                  href="/logout"
-                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-gray-100"
-                >
-                  <LogOut className="h-4 w-4" />
-                  Déconnexion
-                </Link>
+                <LogoutButton className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-gray-100 w-full justify-start" />
               </div>
             </div>
           </nav>
@@ -195,3 +179,4 @@ export default function DashboardPage() {
     </div>
   )
 }
+
